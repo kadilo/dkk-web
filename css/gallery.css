@@ -1,0 +1,46 @@
+.gallery-table{
+    display: grid;
+    grid-template-columns: repeat(13, 8rem);
+    grid-template-rows: repeat(6, 8rem);
+    gap: 1rem;
+    grid-template-areas: 
+    "a a c c c e f f f f g g g"
+    "a a c c c e f f f f g g g"
+    "a a b b b b f f f f i i i"
+    "h j b b b b d d d d i i i"
+    "k l m n n n d d d d i i i"
+    "p l q n n n r r s s s o o";
+}
+
+.gallery-img{
+    position: relative;
+}
+
+.gallery-img-active{
+    position: fixed;
+    width: 80%;
+    height: 80vh;
+    background-size: contain;
+    z-index: 40;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+}
+
+.dark-bg{
+    left: 0;
+    top: 0;
+    display: none;
+    content: "";
+    z-index: 30;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000dd;
+}
+
+.dark-bg-active{
+    z-index: 30;
+    display: block;
+}

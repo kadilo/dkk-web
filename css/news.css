@@ -1,0 +1,98 @@
+.news{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 100%;
+    grid-area: news;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "nl .";
+}
+
+.news-list{
+    display: flex;
+    flex-direction: column;
+    grid-area: nl;
+    gap: 8rem;
+    position: relative;
+}
+.news-container{
+    position: relative;
+    padding: 0 8rem;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "title . time"
+    "dsc dsc dsc";
+    box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.1), 0 0 10rem rgba(221, 221, 221, 0.3) inset;
+
+}
+
+.news .title,.time{
+    display: flex;
+    align-items: center;
+}
+.news .title{
+    position:relative;
+    grid-area: title;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image:linear-gradient(315deg,#523324, #180a03);
+}
+.news .time{
+    grid-area: time;
+    justify-self: end;
+    text-align: right;
+}
+.news .desc{
+    float: left;
+    grid-area: dsc;
+    padding: 36px;
+}
+.news .pic{ 
+    margin: 4rem;
+    grid-area: pic;
+    min-width: 45rem;
+    max-width: 45rem;
+    min-height: 30rem;
+    max-height: 30rem;
+    box-shadow: -1rem 1rem 0 #523324;
+    float: right;
+}
+
+.news .title::after{
+    content: "";
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background: #523324;
+    position: absolute;
+    border-radius: 3px;
+    bottom: -2px;
+}
+
+@media (max-width: 960px){
+    .news-container{
+        padding: 1rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5rem auto auto;
+        grid-template-areas: 
+        "time"
+        "title"
+        "dsc"
+    }
+    .news .title{
+        text-align: center;
+        justify-content: center;
+    }
+    .news .pic{
+        float: none;
+    }
+    .news .desc{
+        float: none;
+    }
+}

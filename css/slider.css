@@ -1,0 +1,76 @@
+.slider-container{
+    margin: 8rem auto;
+    grid-area: slider;
+    width: 100%;
+    position: relative;
+}
+
+.slider{
+    position: relative;
+    box-shadow: -2rem 2rem 0 #523324;
+    border: 1rem solid #ddd;
+    margin: 0 auto;
+    min-width: 60rem;
+    width: 100%;
+    max-width: 120rem;
+    height: 70rem;
+    overflow: hidden;
+    z-index: 5px;
+}
+
+.slider-container input[type="radio"]{ display: none;}
+
+.slider .pic{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 70rem;
+    max-height: 70rem;  
+    background-size: cover;
+    background-position: center;
+}
+
+.slides{
+    display: flex;
+    width: 100%;
+    z-index: 5;
+    transition: 1s;
+}
+
+.switch{
+    position: absolute;
+    width: 100%;
+    bottom: 12px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 20px;
+}
+
+.switch label{
+    display: block;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 3px 3px 6px #111;
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+    outline: 4px solid rgba(255, 255, 255, 0);
+    outline-offset: -4px;
+    transition: background .5s, width 1s;
+    cursor: pointer;
+}
+
+#btn1:checked~.slider .slides{transform: translateX(0);}
+#btn2:checked~.slider .slides{transform: translateX(-100%);}
+#btn3:checked~.slider .slides{transform: translateX(-200%);}
+#btn4:checked~.slider .slides{transform: translateX(-300%);}
+
+#btn1:checked~.switch label[for="btn1"],
+#btn2:checked~.switch label[for="btn2"],
+#btn3:checked~.switch label[for="btn3"],
+#btn4:checked~.switch label[for="btn4"]
+{
+    background: #523324;
+    outline: 4px solid #fff;
+    width: 40px;
+}
